@@ -26,9 +26,12 @@ jobs:
           python test_main.py
         continue-on-error: true
 
-      - name: Start Flask App
+      - name: Start Flask App and Capture Output
         run: |
-          nohup python main.py > /dev/null 2>&1 &
+          nohup python main.py > index.html 2>&1 &
+
+      - name: Wait for Flask app to start
+        run: sleep 10  # Adjust the sleep time as needed
 
       - name: Configure AWS Credentials
         if: ${{ success() }}
