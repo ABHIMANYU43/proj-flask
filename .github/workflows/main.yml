@@ -28,8 +28,7 @@ jobs:
 
       - name: Start Flask App
         run: |
-          python main.py &
-        background: true
+          nohup python main.py > /dev/null 2>&1 &
 
       - name: Configure AWS Credentials
         if: ${{ success() }}
