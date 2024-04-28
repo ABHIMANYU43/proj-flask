@@ -28,10 +28,10 @@ jobs:
 
       - name: Start Flask App and Capture Output
         run: |
-          nohup python main.py > index.html 2>&1 &
+          nohup python3 main.py > index.html 2>&1 &
 
       - name: Wait for Flask app to start
-        run: sleep 10  # Adjust the sleep time as needed
+        run: sleep 20  # Adjust the sleep time as needed
 
       - name: Configure AWS Credentials
         if: ${{ success() }}
