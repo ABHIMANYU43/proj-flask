@@ -26,6 +26,11 @@ jobs:
           python test_main.py
         continue-on-error: true
 
+      - name: Start Flask App
+        run: |
+          python main.py &
+        background: true
+
       - name: Configure AWS Credentials
         if: ${{ success() }}
         uses: aws-actions/configure-aws-credentials@v1
