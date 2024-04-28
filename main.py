@@ -39,7 +39,7 @@ def todo_create():
     db.session.add(todo)
     db.session.commit()
 
-    return {"201": "todo created successfully"}
+    return {"201": "todo created high successfully"}
 
 
 @app.route("/update/<int:id>", methods=["PUT"])
