@@ -41,7 +41,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
-       - name: Deploy to AWS Elastic Beanstalk
+      - name: Deploy to AWS Elastic Beanstalk
         if: ${{ success() }}
         run: |
           eb deploy flask-on-aws --region ap-south-1
